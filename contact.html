@@ -1,9 +1,109 @@
-<section class="details">
-    <h2>Details</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+    
+nav {
+            background-color: #1f3d2b;
+            padding: 10px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }  
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        } 
+        footer {
+            background-color: #1f3d2b;
+            color: white;
+            text-align: center;
+            padding-top:20px;
+            margin-bottom:0px;
+        }
+
+
+</style>
+<body>
+
+<nav>
+    <h2>Destination and Adventures</h2>
     <ul>
-        <li>Camera: DSLR / Mirrorless</li>
-        <li>Lens: Telephoto (200–600mm)</li>
-        <li>Location: Forest & Wildlife Reserves</li>
-        <li>Focus: Nature & Conservation</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
+</nav>
+
+</nav>
+</body>
+<section class="contact">
+    <h2 style="color:#1f3d2b; text-align:center;">Contact Us</h2>
+    <p style="text-align:center; max-width:700px; margin:auto; margin-bottom:20px;">
+        We’d love to hear from you! Whether you have questions, feedback, or want to collaborate, you can reach us through the following details:
+    </p>
+
+    <ul style="list-style:none; max-width:400px; margin:auto; padding-left:0; line-height:1.8;">
+        <li>📧 <strong>Email:</strong> wildlifephotography@example.com</li>
+        <li>📞 <strong>Phone:</strong> +91 9381404052</li>
+        <li>🏠 <strong>Address:</strong> 123 Wildlife Street, Nature City, India</li>
+    </ul>
+
+    <h3 style="color:#1f3d2b; text-align:center; margin-top:30px;">Follow Us</h3>
+    <ul style="list-style:none; max-width:400px; margin:auto; padding-left:0; text-align:center; line-height:1.8;">
+        <li>📸 Instagram: @wildlife_photography</li>
+        <li>👍 Facebook: /wildlifephotography</li>
+        <li>🐦 Twitter: @WildPhoto</li>
+    </ul>
+
+    <h3 style="color:#1f3d2b; text-align:center; margin-top:30px;">Send Us a Message</h3>
+    <p style="text-align:center; max-width:700px; margin:auto; margin-bottom:20px;">
+        You can also send us a message using the contact form below. We’ll respond as soon as possible.
+    </p>
+
+    <form style="max-width:500px; margin:auto; display:flex; flex-direction:column; gap:15px;">
+        <input type="text" placeholder="Your Name" style="padding:10px; border-radius:5px; border:1px solid #ccc;" required>
+        <input type="email" placeholder="Your Email" style="padding:10px; border-radius:5px; border:1px solid #ccc;" required>
+        <textarea placeholder="Your Message" rows="5" style="padding:10px; border-radius:5px; border:1px solid #ccc;" required></textarea>
+        <button type="submit" style="padding:10px; border:none; border-radius:5px; background-color:#1f3d2b; color:white; font-weight:500; cursor:pointer;">
+            Send Message
+        </button>
+    </form>
+
+    <h3 style="color:#1f3d2b; text-align:center; margin-top:30px;">Our Location</h3>
+    <div style="max-width:600px; margin:20px auto; text-align:center;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.901798406954!2d90.39109781543186!3d23.750903394634792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c42a9f6e2d3b%3A0x4f8c2b2b49d59d0!2s123%20Wildlife%20Street%2C%20Nature%20City!5e0!3m2!1sen!2sin!4v1670000000000!5m2!1sen!2sin"
+            width="100%" height="300" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
 </section>
+
+<footer>
+    <p>© 2026 Wildlife Photography Project | Yashodha</p>
+</footer>
+
+</body>
+</html>

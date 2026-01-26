@@ -6,6 +6,12 @@
     <link rel="index.html" href="about.html">
 </head>
 <style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
     
         footer {
             background-color: #1f3d2b;
@@ -22,9 +28,45 @@
     list-style-position: inside;
 
 }
+nav {
+            background-color: #1f3d2b;
+            padding: 10px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }  
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        } 
 
 </style>
 <body>
+
+<nav>
+    <h2>Destination and Adventures</h2><br>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+</nav>
+</body>
 
 <section class="about">
     <h2>About the Project</h2>

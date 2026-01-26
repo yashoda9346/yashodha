@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
     .styles{
         display:grid;
         grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
@@ -45,7 +51,53 @@
     .style-card a:hover{
         background:#45a049;
     }
+   footer {
+            background-color: #1f3d2b;
+            color: white;
+            text-align: center;
+            padding-top:20px;
+            margin-bottom:0px;
+        }  
+           nav {
+            background-color: #1f3d2b;
+            padding: 10px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }  
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        } 
+
+
 </style>
+<body>
+
+<nav>
+    <h2>Destination and Adventures</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+</nav>
+</body>
 
 <section>
     <h2>Gallery</h2>
@@ -56,11 +108,26 @@
         </div>
 
         <div class="style-card">
-            <span class="label">Wild Animals Gallery</span>
-            <a href="wildanimals.html">View Animals</a>
+            <span class="label">Mammals Gallery</span>
+            <a href="mammals.html">View Mammals</a>
+        </div>
+        <div class="style-card">
+            <span class="label">Reptiles & Amphibians Gallery</span>
+            <a href="Reptiles & Amphibians.html">View Reptiles & Amphibians</a>
+        </div>
+        <div class="style-card">
+            <span class="label">Insects Gallery</span>
+            <a href="Insects.html">View Insects</a>
+        </div>
+        <div class="style-card">
+            <span class="label">Marine Animals Gallery</span>
+            <a href="Marine Animals.html">View Marine Animals</a>
         </div>
     </div>
 </section>
+<footer>
+    <p>© 2026 Wildlife Photography Project | Yashodha</p>
+</footer>
 </head>
 </html>
 
