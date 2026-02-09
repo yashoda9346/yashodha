@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BuyNow – Best Deals</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .deals-container {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .deal-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .deal-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            background: #f9f9f9;
+        }
+
+        .deal-card img {
+            width: 100%;
+            height: 180px;
+        }
+
+        .deal-card button {
+            background: green;
+            color: white;
+            padding: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .offer {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: rgb(102, 102, 205);">
+
+<header class="navbar">
+    <div class="logo">Buy<span>Now</span></div>
+
+    <input type="text" class="search-bar" placeholder="Search products...">
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="compare.html">Compare</a>
+        <a href="deals.html">Deals</a>
+        <a href="login.html">Login / Signup</a>
+    </nav>
+</header>
+
+<section class="deals-container">
+    <h1>Today’s Best Deals</h1>
+
+    <div class="deal-grid">
+
+        <div class="deal-card">
+            <img src="mobile.jpg" alt="Mobile">
+            <h3>OnePlus Nord CE</h3>
+            <p class="offer">Flat 30% OFF</p>
+            <p>Now: ₹18,999</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="deal-card">
+            <img src="laptop.jpg" alt="Laptop">
+            <h3>HP Pavilion Laptop</h3>
+            <p class="offer">Save ₹10,000</p>
+            <p>Now: ₹54,999</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="deal-card">
+            <img src="shoes.jpg" alt="Shoes">
+            <h3>Nike Running Shoes</h3>
+            <p class="offer">50% Discount</p>
+            <p>Now: ₹2,499</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="deal-card">
+            <img src="watch.jpg" alt="Watch">
+            <h3>Boat Smartwatch</h3>
+            <p class="offer">Limited Offer</p>
+            <p>Now: ₹1,799</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="deal-card">
+            <img src="headphone.jpg" alt="Headphone">
+            <h3>Sony Headphones</h3>
+            <p class="offer">Extra 20% OFF</p>
+            <p>Now: ₹3,499</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="deal-card">
+            <img src="shirt.jpg" alt="Clothes">
+            <h3>Men Casual Shirt</h3>
+            <p class="offer">Buy 1 Get 1 Free</p>
+            <p>Now: ₹999</p>
+            <button>Buy Now</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 BuyNow | Compare. Choose. Save.</p>
+    <p>Privacy Policy | Contact Us-GopiChand:9346648337</p>
+</footer>
+
+</body>
+</html>

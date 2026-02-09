@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compare – BuyNow</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .compare-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .compare-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .compare-box input, .compare-box button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .sites label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(146, 192, 193);">
+
+<!-- NAVBAR -->
+<header class="navbar" >
+    <div class="logo">Buy<span>Now</span></div>
+
+    <input type="text" class="search-bar" placeholder="Search mobiles, laptops, brands...">
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="compare.html">Compare</a>
+        <a href="deals.html">Deals</a>
+        <a href="login.html">Login / Signup</a>
+    </nav>
+</header>
+
+<div class="compare-container">
+
+    <h2>Compare Products</h2>
+    <p>Enter a product name and compare it across multiple websites.</p>
+
+    <!-- USER INPUT -->
+    <div class="compare-box" style="background-color: rgb(220, 16, 138);">
+        <input type="text" id="productName" placeholder="Enter product name (e.g. iPhone 15, Dell XPS 13)">
+
+        <h4>Select websites to compare:</h4>
+        <div class="sites">
+            <label><input type="checkbox" value="Amazon"> Amazon</label>
+            <label><input type="checkbox" value="Flipkart"> Flipkart</label>
+            <label><input type="checkbox" value="Croma"> Croma</label>
+            <label><input type="checkbox" value="Reliance Digital"> Reliance Digital</label>
+        </div>
+
+        <button onclick="compareProducts()">Compare Now</button>
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <table id="comparisonTable" style="display:none;">
+        <thead>
+            <tr>
+                <th>Website</th>
+                <th>Price</th>
+                <th>Availability</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+
+</div>
+
+<script>
+    function compareProducts() {
+        const product = document.getElementById("productName").value;
+        const checkboxes = document.querySelectorAll(".sites input:checked");
+        const table = document.getElementById("comparisonTable");
+        const tbody = document.getElementById("tableBody");
+
+        if (product === "" || checkboxes.length === 0) {
+            alert("Please enter a product and select at least one website.");
+            return;
+        }
+
+        tbody.innerHTML = "";
+        table.style.display = "table";
+
+        checkboxes.forEach(site => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${site.value}</td>
+                <td>Fetching price...</td>
+                <td>Checking...</td>
+                <td>Loading...</td>
+            `;
+
+            tbody.appendChild(row);
+        });
+    }
+</script>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="closeCompare()"></div>
+
+<!-- SLIDE WINDOW -->
+<div id="compareWindow">
+
+    <span class="close-btn" onclick="closeCompare()">✖</span>
+
+    <h2>Compare Products</h2>
+    <p>Enter a product name and compare prices</p>
+
+    <input type="text" id="productName" placeholder="Enter product name">
+
+    <h4>Select websites:</h4>
+    <div class="sites">
+        <label><input type="checkbox" value="Amazon"> Amazon</label>
+        <label><input type="checkbox" value="Flipkart"> Flipkart</label>
+        <label><input type="checkbox" value="Croma"> Croma</label>
+        <label><input type="checkbox" value="Reliance Digital"> Reliance Digital</label>
+    </div>
+
+    <button onclick="compareProducts()">Compare Now</button>
+
+    <table id="comparisonTable">
+        <thead>
+            <tr>
+                <th>Website</th>
+                <th>Price</th>
+                <th>Availability</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+</body>
+</html>

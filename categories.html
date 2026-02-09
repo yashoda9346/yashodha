@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories – BuyNow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Buy<span>Now</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="compare.html">Compare</a>
+        <a href="deals.html">Deals</a>
+        <a href="login.html">Login / Signup</a>
+    </nav>
+</header>
+
+<section class="categories">
+    <h2>All Categories</h2>
+
+    <div class="category-cards">
+        <div class="card" onclick="showImages('mobiles')">📱 Mobiles</div>
+        <div class="card" onclick="showImages('laptops')">💻 Laptops</div>
+        <div class="card" onclick="showImages('headphones')">🎧 Headphones</div>
+        <div class="card" onclick="showImages('watches')">⌚ Smartwatches</div>
+        <div class="card" onclick="showImages('tv')">📺 Smart TVs</div>
+        <div class="card" onclick="showImages('cameras')">📷 Cameras</div>
+        <div class="card" onclick="showImages('gaming')">🎮 Gaming Consoles</div>
+        <div class="card" onclick="showImages('appliances')">🧊 Home Appliances</div>
+    </div>
+</section>
+
+<!-- Image Display Section -->
+<section class="image-section">
+    <h2 id="category-title"></h2>
+    <div id="image-container"></div>
+</section>
+
+<script src="script.js"></script>
+
+    </div>
+</section>
+
+
+</body>
+</html>

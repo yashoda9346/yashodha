@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login – BuyNow</title>
+    <link rel="stylesheet" href="style.css">
+
+<header class="navbar">
+    <div class="logo">Buy<span>Now</span></div>
+
+    <input type="text" class="search-bar" placeholder="Search mobiles, laptops, brands...">
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="compare.html">Compare</a>
+        <a href="deals.html">Deals</a>
+        <a href="login.html">Login / Signup</a>
+    </nav>
+</header>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f3f6;
+}
+
+.login-container {
+    display: flex;
+    width: 750px;
+    height: 520px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0px 0px 10px gray;
+}
+
+.left-panel {
+    width: 40%;
+    background: #2874f0;
+    color: white;
+    padding: 40px;
+}
+
+.right-panel {
+    width: 60%;
+    padding: 40px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: none;
+    font-size: 16px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #fb641b;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.otp-btn {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    color: #2874f0;
+    border: 1px solid #2874f0;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.message {
+    color: green;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="left-panel">
+        <h2>Welcome to BuyNow</h2>
+        <p>Login or Register to explore amazing deals and compare products easily.</p>
+    </div>
+
+    <div class="right-panel">
+
+        <!-- REGISTER FORM -->
+        <div id="registerSection">
+            <h2>Register</h2>
+
+            <input type="text" id="regName" class="input-box" placeholder="Enter Name">
+
+            <input type="text" id="regNumber" class="input-box" placeholder="Enter Mobile Number">
+
+            <button class="otp-btn" onclick="sendOTP()">Send OTP</button>
+
+            <input type="text" id="otpBox" class="input-box hidden" placeholder="Enter OTP">
+
+            <button class="login-btn hidden" id="verifyBtn" onclick="verifyOTP()">Verify OTP</button>
+
+            <p class="message" id="regMessage"></p>
+
+            <div class="signup-link">
+                Already have account?
+                <a href="#" onclick="showLogin()">Login Here</a>
+            </div>
+        </div>
+
+
+        <!-- LOGIN FORM -->
+        <div id="loginSection" class="hidden">
+            <h2>Login</h2>
+
+            <input type="text" id="loginNumber" class="input-box" placeholder="Enter Mobile Number">
+
+            <button class="login-btn" onclick="loginUser()">Login</button>
+
+            <p class="message" id="loginMessage"></p>
+
+            <div class="signup-link">
+                New user?
+                <a href="#" onclick="showRegister()">Register Here</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let generatedOTP;
+let registeredUser = {};
+
+// Show Register Section
+function showRegister() {
+    document.getElementById("registerSection").classList.remove("hidden");
+    document.getElementById("loginSection").classList.add("hidden");
+}
+
+// Show Login Section
+function showLogin() {
+    document.getElementById("registerSection").classList.add("hidden");
+    document.getElementById("loginSection").classList.remove("hidden");
+}
+
+
+// SEND OTP FUNCTION
+function sendOTP() {
+
+    let name = document.getElementById("regName").value;
+    let number = document.getElementById("regNumber").value;
+
+    if (name == "" || number == "") {
+        alert("Please enter Name and Mobile Number");
+        return;
+    }
+
+    if (number.length != 10) {
+        alert("Enter valid 10 digit number");
+        return;
+    }
+
+    generatedOTP = Math.floor(1000 + Math.random() * 9000);
+
+    alert("Your OTP is: " + generatedOTP);
+
+    document.getElementById("otpBox").classList.remove("hidden");
+    document.getElementById("verifyBtn").classList.remove("hidden");
+
+    registeredUser.name = name;
+    registeredUser.number = number;
+}
+
+
+// VERIFY OTP FUNCTION
+function verifyOTP() {
+
+    let enteredOTP = document.getElementById("otpBox").value;
+
+    if (enteredOTP == generatedOTP) {
+
+        document.getElementById("regMessage").innerHTML =
+        "Registration Successful! Now you can Login.";
+
+        setTimeout(showLogin, 1500);
+
+    } else {
+        alert("Wrong OTP, try again");
+    }
+}
+
+
+// LOGIN FUNCTION
+function loginUser() {
+
+    let loginNum = document.getElementById("loginNumber").value;
+
+    if (loginNum == registeredUser.number) {
+
+        document.getElementById("loginMessage").innerHTML =
+        "Login Successful! Welcome " + registeredUser.name;
+
+    } else {
+        alert("Number not registered. Please register first.");
+    }
+}
+
+</script>
+
+</body>
+</html>
